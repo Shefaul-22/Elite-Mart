@@ -48,7 +48,9 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
+  /* Updated Light Background: Pure White  Soft White */
+   
+  --background: oklch(0.98 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -78,30 +80,33 @@
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
+  /* Updated Dark Background:  Deep Midnight Navy */
+  --background: oklch(0.12 0.025 264.695);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0.045 264.695);
+
+  /* Card colour*/
+  --card: oklch(0.16 0.03 264.695);
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0.045 264.695);
+  --popover: oklch(0.16 0.03 264.695);
   --popover-foreground: oklch(0.985 0 0);
 
   --primary: oklch(0.585 0.233 253.029);
   --primary-foreground: oklch(0.985 0 0);
 
-  --secondary: oklch(0.269 0 0);
+  --secondary: oklch(0.22 0.03 264.695);
   --secondary-foreground: oklch(0.985 0 0);
 
-  --muted: oklch(0.269 0 0);
+  --muted: oklch(0.22 0.03 264.695);
   --muted-foreground: oklch(0.708 0 0);
 
-  --accent: oklch(0.269 0 0);
+  --accent: oklch(0.22 0.03 264.695);
   --accent-foreground: oklch(0.985 0 0);
 
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.985 0 0);
 
-  --border: oklch(1 0 0 / 15%);
-  --input: oklch(1 0 0 / 15%);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 12%);
   --ring: oklch(0.585 0.233 253.029 / 30%);
 }
 
@@ -111,13 +116,21 @@
   }
 
   body {
-    @apply bg-background text-foreground selection:bg-primary/20;
+    /* smooth theme transition  transition-colors duration-500  */
+    @apply bg-background text-foreground selection:bg-primary/20 transition-colors duration-500;
   }
 }
 
 @layer utilities {
+
+  /* Premium glass effect */
   .glass {
-    @apply bg-white/70 dark:bg-slate-950/70 backdrop-blur-md border border-white/20 dark:border-slate-800/50;
+    @apply bg-white/70 dark:bg-black/40 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+
+  /* Navbar desktop background */
+  .glass-dark {
+    @apply bg-secondary/40 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10;
   }
 
   .text-gradient {
@@ -129,26 +142,14 @@
   }
 
   .navbar-container {
-    @apply pointer-events-auto flex items-center justify-between w-full max-w-7xl h-16 px-4 md:px-6 bg-background/70 backdrop-blur-md border border-border/50 shadow-2xl rounded-2xl md:rounded-full transition-all duration-500;
+    @apply pointer-events-auto flex items-center justify-between w-full max-w-7xl h-16 px-4 md:px-6 bg-background backdrop-blur-md border border-border/50 shadow-2xl rounded-2xl md:rounded-full transition-all duration-500;
   }
 
-  /* Fixed Nav Active Glow using color-mix for Tailwind 4 stability */
+  /* Active Nav Item Glow - Tailwind 4 compatible color-mix */
   .nav-active-glow {
-    background-color: color-mix(in srgb, var(--primary), transparent 90%);
+    background-color: color-mix(in srgb, var(--primary), transparent 92%);
     color: var(--primary);
     border: 1px solid color-mix(in srgb, var(--primary), transparent 80%);
-    box-shadow: inset 0 0 15px color-mix(in srgb, var(--primary), transparent 85%);
-  }
-}
-
-@layer utilities {
-  .glass {
-    @apply bg-white/70 dark:bg-slate-950/70 backdrop-blur-md border border-white/20 dark:border-slate-800/50;
-  }
-
-  .nav-active-glow {
-    background-color: color-mix(in srgb, var(--primary), transparent 90%);
-    border: 1px solid color-mix(in srgb, var(--primary), transparent 70%);
-    box-shadow: inset 0 0 12px color-mix(in srgb, var(--primary), transparent 85%);
+    box-shadow: inset 0 0 12px color-mix(in srgb, var(--primary), transparent 88%);
   }
 }
