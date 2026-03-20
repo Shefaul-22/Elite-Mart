@@ -1,7 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import NextAuthProvider from "@/components/NextAuthProvider"; // আপনার তৈরি করা প্রোভাইডার
-import Navbar from "@/components/Navbar"; // আপনার তৈরি করা নেভবার
+
+import Navbar from "@/components/Navbar"; 
+import NextAuthProvider from "@/provider/NextAuthProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
