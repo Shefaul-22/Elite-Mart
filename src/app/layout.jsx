@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import NextAuthProvider from "@/provider/NextAuthProvider";
 import { ThemeProvider } from "@/components/ThemeProvider"; 
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,11 +38,15 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <NextAuthProvider>
+            
             <Navbar />
 
             <main className="flex-grow">
               {children}
             </main>
+
+            <Footer></Footer>
+
           </NextAuthProvider>
         </ThemeProvider>
       </body>

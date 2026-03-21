@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
     Sun, Moon, LogOut, LayoutDashboard,
     Menu, X, Home, Flame, Truck, LayoutGrid,
-    LogIn
+    LogIn, PlusCircle, Settings // Added icons for the new routes
 } from "lucide-react";
 import { FaCartShopping, FaRegHeart } from "react-icons/fa6";
 
@@ -113,8 +113,8 @@ const Navbar = () => {
                             <FaRegHeart
                                 size={20}
                                 className={cn(
-                                    "group-hover:scale-110 transition-transform duration-300 flex-shrink-0 text-foreground/70", // Default style
-                                    wishlistCount > 0 && "text-red-500 fill-red-500/20 stroke-red-500 stroke-[2px]" // Active style (Solid Red)
+                                    "group-hover:scale-110 transition-transform duration-300 flex-shrink-0 text-foreground/70",
+                                    wishlistCount > 0 && "text-red-500 fill-red-500/20 stroke-red-500 stroke-[2px]"
                                 )}
                             />
 
@@ -160,12 +160,31 @@ const Navbar = () => {
                                     </Avatar>
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent align="end" className="w-56 glass rounded-2xl p-2 border-white/10 shadow-2xl z-[100]">
-                                    <DropdownMenuLabel className="px-3 py-2 text-xs opacity-60">My Account</DropdownMenuLabel>
+                                    <DropdownMenuLabel className="px-3 py-2 text-xs opacity-60">
+                                        Signed in as <span className="font-bold text-foreground block truncate">{session.user?.name}</span>
+                                    </DropdownMenuLabel>
+                                    <DropdownMenuSeparator className="bg-white/10" />
+
                                     <DropdownMenuItem asChild className="rounded-xl cursor-pointer">
                                         <Link href="/dashboard" className="flex items-center w-full">
                                             <LayoutDashboard className="mr-2 h-4 w-4" /> Dashboard
                                         </Link>
                                     </DropdownMenuItem>
+
+                                    {/* Requirement: Add Product Private Route */}
+                                    <DropdownMenuItem asChild className="rounded-xl cursor-pointer">
+                                        <Link href="/dashboard/add-product" className="flex items-center w-full">
+                                            <PlusCircle className="mr-2 h-4 w-4" /> Add Product
+                                        </Link>
+                                    </DropdownMenuItem>
+
+                                    {/* Requirement: Manage Products Private Route */}
+                                    <DropdownMenuItem asChild className="rounded-xl cursor-pointer">
+                                        <Link href="/dashboard/manage-products" className="flex items-center w-full">
+                                            <Settings className="mr-2 h-4 w-4" /> Manage Products
+                                        </Link>
+                                    </DropdownMenuItem>
+
                                     <DropdownMenuSeparator className="bg-white/10" />
                                     <DropdownMenuItem onClick={() => signOut()} className="text-red-500 rounded-xl cursor-pointer">
                                         <LogOut className="mr-2 h-4 w-4" /> Logout
@@ -208,12 +227,18 @@ const Navbar = () => {
                                 </button>
                                 <h2 className="text-xl font-bold">EliteMart</h2>
                                 <div className="flex gap-3 mt-6">
-                                    <Link href="/login" className="flex-1" onClick={() => setMobileOpen(false)}>
-                                        <button className="w-full bg-white text-black py-2.5 rounded-xl font-bold text-sm">Login</button>
-                                    </Link>
-                                    <Link href="/register" className="flex-1" onClick={() => setMobileOpen(false)}>
-                                        <button className="w-full bg-neutral-800 text-white py-2.5 rounded-xl font-bold text-sm border border-neutral-700">Join</button>
-                                    </Link>
+                                    {session ? (
+                                        <button onClick={() => signOut()} className="w-full bg-red-500 text-white py-2.5 rounded-xl font-bold text-sm">Logout</button>
+                                    ) : (
+                                        <>
+                                            <Link href="/login" className="flex-1" onClick={() => setMobileOpen(false)}>
+                                                <button className="w-full bg-white text-black py-2.5 rounded-xl font-bold text-sm">Login</button>
+                                            </Link>
+                                            <Link href="/register" className="flex-1" onClick={() => setMobileOpen(false)}>
+                                                <button className="w-full bg-neutral-800 text-white py-2.5 rounded-xl font-bold text-sm border border-neutral-700">Join</button>
+                                            </Link>
+                                        </>
+                                    )}
                                 </div>
                             </div>
 

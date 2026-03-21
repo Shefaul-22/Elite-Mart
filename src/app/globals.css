@@ -45,11 +45,28 @@
   --color-sidebar-primary: var(--sidebar-primary);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+
+  /* Marquee Keyframes */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Marquee Animation */
+  --animate-marquee: marquee 40s linear infinite;
+
+  
 }
 
 :root {
   /* Updated Light Background: Pure White  Soft White */
-   
+
   --background: oklch(0.98 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
