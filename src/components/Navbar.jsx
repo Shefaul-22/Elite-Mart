@@ -174,14 +174,14 @@ const Navbar = () => {
 
                                     {/* Requirement: Add Product Private Route */}
                                     <DropdownMenuItem asChild className="rounded-xl cursor-pointer">
-                                        <Link href="/dashboard/add-product" className="flex items-center w-full">
+                                        <Link href="/add-product" className="flex items-center w-full">
                                             <PlusCircle className="mr-2 h-4 w-4" /> Add Product
                                         </Link>
                                     </DropdownMenuItem>
 
                                     {/* Requirement: Manage Products Private Route */}
                                     <DropdownMenuItem asChild className="rounded-xl cursor-pointer">
-                                        <Link href="/dashboard/manage-products" className="flex items-center w-full">
+                                        <Link href="/manage-products" className="flex items-center w-full">
                                             <Settings className="mr-2 h-4 w-4" /> Manage Products
                                         </Link>
                                     </DropdownMenuItem>
