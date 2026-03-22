@@ -49,7 +49,7 @@ const Navbar = () => {
         { name: "All Products", path: "/products", icon: LayoutGrid },
         { name: "New Arrivals", path: "/new-arrivals", icon: Flame, color: "text-emerald-500" },
         { name: "Free Delivery", path: "/delivery", icon: Truck, color: "text-blue-500" },
-        { name: "Top Selling", path: "/top-selling", icon: Flame, color: "text-orange-500" },
+        // { name: "Top Selling", path: "/top-selling", icon: Flame, color: "text-orange-500" },
     ];
 
     if (!mounted) return null;
@@ -80,28 +80,29 @@ const Navbar = () => {
 
                     {/* Center: Links (Desktop) */}
                     <div className="hidden md:flex items-center gap-2 glass-dark p-2 rounded-full border border-white/10 shadow-inner">
-                        {navLinks.slice(0, 4).map((link) => {
-                            const isActive = pathname === link.path;
-                            return (
-                                <Link
-                                    key={link.path}
-                                    href={link.path}
-                                    className={cn(
-                                        "relative px-6 py-2 text-sm font-bold transition-all duration-300 rounded-full",
-                                        isActive ? "text-primary" : "text-foreground/60 hover:text-foreground"
-                                    )}
-                                >
-                                    <span className="relative z-10">{link.name}</span>
-                                    {isActive && (
-                                        <motion.div
-                                            layoutId="activeNav"
-                                            className="absolute inset-0 nav-active-glow rounded-full -z-0"
-                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                                        />
-                                    )}
-                                </Link>
-                            );
-                        })}
+                        {
+                            navLinks.map((link) => {
+                                const isActive = pathname === link.path;
+                                return (
+                                    <Link
+                                        key={link.path}
+                                        href={link.path}
+                                        className={cn(
+                                            "relative px-6 py-2 text-sm font-bold transition-all duration-300 rounded-full",
+                                            isActive ? "text-primary" : "text-foreground/60 hover:text-foreground"
+                                        )}
+                                    >
+                                        <span className="relative z-10">{link.name}</span>
+                                        {isActive && (
+                                            <motion.div
+                                                layoutId="activeNav"
+                                                className="absolute inset-0 nav-active-glow rounded-full -z-0"
+                                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                            />
+                                        )}
+                                    </Link>
+                                );
+                            })}
                     </div>
 
                     {/* Right: Actions */}
