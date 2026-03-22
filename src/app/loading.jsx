@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Logo from "@/components/layouts/Logo";
+import Logo from "@/components/Logo";
+
 
 const Loading = () => {
     return (
