@@ -1,5 +1,10 @@
 # 🛒 Elite-Mart - Modern E-Commerce Platform
 
+<p align="center">
+  <img src="https://i.ibb.co.com/DH4ZMv0z/590shots-so.png" alt="Elite-Mart Mockup" width="100%">
+</p>
+
+
 Elite-Mart is a high-performance, full-stack e-commerce solution built with the latest **Next.js 15** framework. It provides a seamless shopping experience with secure authentication, dynamic product filtering, and a robust admin management system.
 
 **🔗 Live Demo:** [https://elite-mart-eight.vercel.app/](https://elite-mart-eight.vercel.app/)
