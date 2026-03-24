@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛒 Elite-Mart - Modern E-Commerce Platform
 
-## Getting Started
+Elite-Mart is a high-performance, full-stack e-commerce solution built with the latest **Next.js 15** framework. It provides a seamless shopping experience with secure authentication, dynamic product filtering, and a robust admin management system.
 
-First, run the development server:
+**🔗 Live Demo:** [https://elite-mart-eight.vercel.app/](https://elite-mart-eight.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Key Features
+- **Secure Authentication:** Implemented using **Next-Auth** for social and credential-based login.
+- **Dynamic Dashboard:** A comprehensive admin panel to manage products, orders, and users.
+- **Image Hosting:** Integrated with **ImgBB API** for fast and reliable image management.
+- **Responsive UI:** Built with **Tailwind CSS** and **shadcn/ui** for a pixel-perfect, mobile-first design.
+- **Optimized Performance:** Server-side rendering (SSR) and efficient data fetching for lightning-fast load times.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
+- **Frontend:** Next.js 15 (App Router), React, Tailwind CSS, shadcn/ui.
+- **Backend:** Node.js, Next.js Server Actions.
+- **Database:** MongoDB with Mongoose.
+- **State Management:** React Context API / TanStack Query.
+- **Deployment:** Vercel.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📦 Dependencies
+- `next-auth`: For secure session management.
+- `recharts`: For data visualization in the admin dashboard.
+- `lucide-react`: For modern and clean iconography.
+- `clsx` & `tailwind-merge`: For dynamic class management.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Local Setup
+Follow these steps to run the project locally:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Shefaul-22/Elite-Mart.git](https://github.com/Shefaul-22/Elite-Mart.git)
